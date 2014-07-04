@@ -7,12 +7,55 @@
 //
 
 #import "FSAppDelegate.h"
+#import "FSHomeViewController.h"
+#import "FSMenuViewController.h"
+#import "MMDrawerController.h"
+#import "MMDrawerVisualState.h"
+#import "MMExampleDrawerVisualStateManager.h"
 
 @implementation FSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    UIViewController * leftSideDrawerViewController = [[FSMenuViewController alloc] init];
+    
+    UIViewController * centerViewController = [[FSHomeViewController alloc] init];
+    
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:centerViewController];
+    
+    [navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bg"] forBarMetrics:UIBarMetricsDefault];
+    //隐藏底部线
+    navigationController.navigationBar.clipsToBounds = YES;
+    
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithWhite:.5 alpha:.5f]];
+    MMDrawerController * drawerController = [[MMDrawerController alloc]
+                                             initWithCenterViewController:navigationController
+                                             leftDrawerViewController:leftSideDrawerViewController
+                                             rightDrawerViewController:nil];
+    [drawerController setMaximumLeftDrawerWidth:200];
+    
+    [drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+        MMDrawerControllerDrawerVisualStateBlock block;
+        block = [[MMExampleDrawerVisualStateManager sharedManager]
+                 drawerVisualStateBlockForDrawerSide:MMDrawerSideLeft];
+        if(block){
+            block(drawerController, drawerSide, percentVisible);
+            [MMDrawerVisualState swingingDoorVisualStateBlock];
+        }
+    }];
+    [[MMExampleDrawerVisualStateManager sharedManager] setLeftDrawerAnimationType:4];
+    [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setRootViewController:drawerController];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							
