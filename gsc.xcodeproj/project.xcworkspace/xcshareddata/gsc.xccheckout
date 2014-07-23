@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>385840CB-0B0E-4BE8-8C09-AA091938DAED</string>
+	<key>IDESourceControlProjectName</key>
+	<string>gsc</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9EFDF4B5-46E2-4282-B19E-8E4F81611775</key>
+		<string>https://github.com/comrade110/gsc.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>gsc.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9EFDF4B5-46E2-4282-B19E-8E4F81611775</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/comrade110/gsc.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9EFDF4B5-46E2-4282-B19E-8E4F81611775</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9EFDF4B5-46E2-4282-B19E-8E4F81611775</string>
+			<key>IDESourceControlWCCName</key>
+			<string>gsc</string>
+		</dict>
+	</array>
+</dict>
+</plist>
